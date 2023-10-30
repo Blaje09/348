@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RGB Color & Border Width Controller</title>
+    <style>
+        .custom-paragraph {
+            border: 5px solid black;
+            padding: 10px;
+            width: 50%;
+            margin: 0 auto;
+        }
+        a{text-align: center;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size: larger;}
+        body {background-image: url("https://img.freepik.com/premium-photo/white-art-paper-background_35956-2379.jpg");}
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <div>
+        <label for="colorInput">Enter RGB values for text and border color (e.g., 255, 0, 0 for red): </label>
+        <input type="text" id="colorInput" placeholder="Enter RGB values (e.g., 255, 0, 0)" />
+        <label for="borderWidthInput">Enter border width (in pixels): </label>
+        <input type="number" id="borderWidthInput" min="0" placeholder="Enter border width" />
+        <button onclick="applyStyles()">Apply</button>
+    </div>
+    <p class="custom-paragraph" id="customPara">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero in interdum.</p>
+
+    <script>
+        function applyStyles() {
+            const colorInput = document.getElementById('colorInput').value;
+            const borderWidth = document.getElementById('borderWidthInput').value;
+            const paragraph = document.getElementById('customPara');
+            
+            if (colorInput) {
+                const rgbValues = colorInput.split(',').map(value => parseInt(value));
+                if (rgbValues.length === 3 && rgbValues.every(value => !isNaN(value))) {
+                    const color = `rgb(${rgbValues[0]}, ${rgbValues[1]}, ${rgbValues[2]})`;
+                    paragraph.style.color = color;
+                    paragraph.style.borderColor = color;
+                } else {
+                    alert('Please enter valid RGB values.');
+                }
+            }
+
+            if (borderWidth) {
+                paragraph.style.borderWidth = `${borderWidth}px`;
+            }
+        }
+    </script>
+    <p></p>
+    <p></p>
+    <div style="text-align: center;">
+    <a href="https://people.eecs.ku.edu/~b511j900/" style="text-align:center">Home</a>
+    </div>
+</body>
+</html>

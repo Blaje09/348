@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+  height: 200px;
+ 
+
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+body {background-image: url("https://img.freepik.com/premium-photo/white-art-paper-background_35956-2379.jpg");}
+</style>
+        
+  
+    <title>Password Verification</title>
+    <script>
+        function verifyPasswords() {
+            const password1 = document.getElementById('password1').value;
+            const password2 = document.getElementById('password2').value;
+
+            if (password1.length < 8 || password2.length < 8) {
+                alert("Password should be at least eight characters long.");
+            } else if (password1 !== password2) {
+                alert("Passwords do not match. Please re-enter matching passwords.");
+            } else {
+                alert("Passwords matched successfully!");
+            }
+        }
+    </script>
+</head>
+<body text-align:center>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <div class="container">
+    <div style="text-align: center;" class="center">
+        <label for="password1">Enter Password:</label>
+        <input type="password" id="password1" placeholder="Enter your password">
+        <br>
+        <label for="password2">Re-enter Password:</label>
+        <input type="password" id="password2" placeholder="Re-enter your password">
+        <br>
+        <button onclick="verifyPasswords()">Verify Passwords</button>
+    </div>
+    </div>  
+    <div style="text-align: center;">
+        <a href="https://people.eecs.ku.edu/~b511j900/" style="text-align:center">Home</a>
+        </div>
+</body>
+</html>
